@@ -1,0 +1,41 @@
+\documentclass{article}
+
+
+
+
+\begin{document}
+
+\section{Introduction}
+
+\subsection{Introduction}
+
+\begin{itemize}
+  \item Aquí se ven los tipeados que se van a utilizar durante todo el proceso del libro.
+  \item Dónde encontrar ayuda cuando se presenta un error (foros de comunidad).
+\end{itemize}
+
+\section{Preparing for the build}
+
+\subsection{Preparing the Host System}
+
+\begin{itemize}
+  \item En la parte de \textit{Host System Requirements} se corrió un \textit{script} en \textit{bash} que permite ver cómo están los paquetes dentro del ecosistema de nuestra máquina virtual. Para nuestro caso faltó instalar Bison, GCC, texalgo y que me acuerde que se apunte bison a yacc.
+  \item Se han creado las particiones:
+        \begin{itemize}
+          \item Una partición de 30.27 GB en btrfs para todo lo que es el sistema.
+          \item Otra de \textit{swap} del tamaño de la memoria RAM de la máquina virtual (8.11 GB).
+          \item Se tiene 700 MB de espacio libre para montar el GRUB en el futuro. Aunque es necesario solo 1 MB
+          \item La partición de btrfs se formateó a ext4 debido a lectura que se hizo. Esto se debe a que ext4 fue implementado desde antes en el Linux kernel y el btrfs desde la versión 5.0, pero pero pero, en el libro se utiliza una cuatro punto algo.
+          \item Se ha creado el sistema de archivos en la partición hecha y también sobre la partición \textit{swap}, no arrojó ningún mensaje de error. Todo bien.
+          \item Se ha creado la variable \texttt{LFS} y se editó el archivo \texttt{.bashrc} de ambos usuarios (vm y root) donde se ha agregó unas líneas en bash para comprobar que la variable existe y si no, que la cree.
+          \item Se ha montado en la partición el sistema de archivos con el comando \texttt{mount} y también para la memoria \textit{swap}.
+        \end{itemize}
+\end{itemize}
+
+\subsection{Packages and Patches}
+
+\begin{itemize}
+  \item Eso.
+\end{itemize}
+
+\end{document}
