@@ -1,0 +1,67 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\title{\LaTeX-Beamer Präsentationsvorlage}
+\subtitle{Julien Marten}
+\author{Julien Marten}
+\date{Stand November 2024}
+
+\usetheme{HSB}
+
+\begin{document}
+
+
+\begin{frame}[plain]
+    \titlepage
+\end{frame}
+
+
+\section{Abschnitt}
+
+
+\begin{inhaltsverzeichnis}
+    \begin{frame}[plain]{Inhaltsverzeichnis}
+    \tableofcontents
+    \end{frame}
+\end{inhaltsverzeichnis}
+
+\section{Kapitelüberschrift}
+
+\begin{kapitel}
+    \begin{frame}[plain]{\thesection. \insertsection}
+    \end{frame}
+\end{kapitel}
+
+
+\section{Erste Folie}
+\begin{frame}[t]{Erste Folie}
+    \textbf{Unterüberschrift} \\
+    Folgend ist eine Aufzählung zu sehen
+    \begin{itemize}
+        \item 1. Aufzählung
+        \item 2. Aufzählung
+    \end{itemize}
+\end{frame}
+
+\section{Einstellungsmöglickeiten}
+\begin{frame}[t]{Zweite Folie}
+    \begin{columns}[t]
+        \begin{column}{0.5\textwidth}
+        In der \emph{beamercolorthemeHSB.sty} können folgende Voreinstellungen geändert werden:
+            \begin{itemize}
+                \item Organistation
+                \item Farbverlauf
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.4\textwidth}  %%<--- here
+            \begin{center}
+             \includegraphics[width=\textwidth]{images/Auswahlmöglichkeiten.png}
+             \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+
+
+
+\end{document}

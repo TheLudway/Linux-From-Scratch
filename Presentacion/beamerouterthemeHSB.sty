@@ -1,0 +1,111 @@
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{frametitle}
+{
+    \begin{beamercolorbox}{frametitle}
+        \vspace{0.7cm} \\
+        \insertframetitle
+    \end{beamercolorbox}
+}
+
+
+\RequirePackage{tikz}
+
+\setbeamersize{text margin left=6mm,text margin right=6mm}
+\newlength{\marginedtextwidth}{\textwidth - 12mm}
+
+% Titelseite
+
+\setbeamertemplate{title page}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[right,inner sep=0pt] at (current page.west)
+    {
+      \includegraphics[width=\paperwidth]{\backgroundImagePath}
+    };
+
+    \node[above right,inner sep=0pt] at (current page.west)
+    {
+      \includegraphics[width=0.7\paperheight]{\ZusatzLogoPath}
+    };
+
+    \node[above left,inner sep=0pt] at (current page.east)
+    {
+      \includegraphics[width=0.55\paperheight]{\OfficeLogoPath}
+    };
+
+    \node[below right, inner sep=0.3cm] at (current page.west)
+    {
+      \textcolor{white}{\textbf{\inserttitle}}
+    };
+    
+    \node[below right, inner sep=0.3cm, yshift=-0.5cm] at (current page.west)
+    {
+      \textcolor{white}{\insertsubtitle}
+    };
+
+    \node[below right, inner sep=0.3cm, yshift=-1.5cm] at (current page.west)
+    {
+      \textcolor{white}{\insertdate}
+    };
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{headline}{
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[below right,inner sep=0pt] at (current page.north west)
+    {
+      \includegraphics[width=\paperwidth]{\headlineImagePath}
+    };
+
+    \node[below left,inner sep=0pt] at (current page.north east)
+    {
+      \includegraphics[width=0.15\paperwidth]{\OfficeLogoPath}
+    };
+  \end{tikzpicture}
+}
+
+\setbeamertemplate{footline}{
+    \begin{beamercolorbox}[wd=\textwidth,ht=0mm,dp=0mm]{fuss}
+        \hspace{5mm} \textcolor{HSB-blau}{} \inserttitle, \insertauthor\vspace{5mm} \hfill \insertdate \hspace{2mm} \thepage \hspace{5mm}
+    \end{beamercolorbox}
+}
+
+% Inhaltsverzeichnis
+
+\newenvironment{inhaltsverzeichnis}{
+    \setbeamertemplate{background}{
+        \includegraphics[width=\paperwidth,height=\paperheight]{backgrounds/background_43_\HSBthemecolor.png}
+    }
+
+    \setbeamertemplate{frametitle}{
+        \begin{beamercolorbox}{frametitle}
+            \vspace{0.7cm} \\
+            \Large \textcolor{white}{\insertframetitle} 
+        \end{beamercolorbox}
+    }
+}{ % Ende der Umgebung und Setzen des Standardhintergrunds zurück
+    \setbeamertemplate{background}{}
+    \setbeamertemplate{frametitle}{}
+}
+
+% Kapitelüberschrift
+
+\newenvironment{kapitel}{
+    \setbeamertemplate{background}{
+        \includegraphics[width=\paperwidth,height=\paperheight]{backgrounds/background_43_\HSBthemecolor.png}
+    }
+
+    \setbeamertemplate{frametitle}{
+      \begin{tikzpicture}[remember picture,overlay]
+        \node[right,inner sep=0pt, yshift=1.3cm] at (current page.west)
+        {
+            \hspace{6mm} \Large \textcolor{white}{\insertframetitle}
+        };
+      \end{tikzpicture}
+    }
+}{ % Ende der Umgebung und Setzen des Standardhintergrunds zurück
+    \setbeamertemplate{background}{}
+    \setbeamertemplate{frametitle}{}
+}
+
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
