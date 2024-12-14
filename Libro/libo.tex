@@ -1,4 +1,5 @@
 \documentclass{article}
+\usepackage{xurl}
 
 
 
@@ -35,7 +36,10 @@
 \subsection{Packages and Patches}
 
 \begin{itemize}
-  \item Eso.
+  \item El paquete \url{https://prdownloads.sourceforge.net/expat/expat-2.6.2.tar.xz} no está disponible, arroja un error 404, tocó bajarlo de un repositorio en GitHub. Del resto todo bien, recordar utilizar \texttt{sudo} para la parte de descargar y no tener que luego hacer permisos de \textit{root}.
+  \item Se pasó el archivo \texttt{md5sums} para validar todos los paquetes.
+  \item Hubo un problema de que algunos paquetes no los descargó, esto porque se tenía la fecha desicronizada, toca siempre que se vuelva a utilizar la VM verificar la fecha.
+  \item Se hizo las actualizaciones de los paquetes por temas de seguridad.
 \end{itemize}
 
 \end{document}
